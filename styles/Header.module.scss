@@ -16,6 +16,10 @@
   text-decoration: none;
 }
 
+.userIcon {
+  max-height: 48px;
+}
+
 .navUser {
   border-left: 1px solid #e5e5e5;
   margin: auto 50px;
@@ -26,8 +30,4 @@
     margin: 0 2rem;
     font-weight: 600;
   }
-}
-
-.userIcon {
-  max-height: 48px;
 }
