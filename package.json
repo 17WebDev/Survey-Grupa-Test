@@ -1,0 +1,30 @@
+{
+  "name": "survey-grupa-front",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "bootstrap": "5.0.0",
+    "jquery": "3.6.0",
+    "next": "10.2.3",
+    "react": "17.0.2",
+    "react-bootstrap": "^1.6.1",
+    "react-dom": "17.0.2",
+    "sass": "^1.34.1",
+    "survey-react": "^1.8.50",
+    "surveyjs-widgets": "^1.8.50"
+  },
+  "devDependencies": {
+    "@types/inputmask": "^5.0.0",
+    "@types/jquery": "^3.5.5",
+    "@types/react": "17.0.9",
+    "typescript": "4.3.2"
+  },
+  "resolutions": {
+    "inputmask": "5.0.6-beta.43"
+  }
+}
