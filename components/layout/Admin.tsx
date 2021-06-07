@@ -1,21 +1,21 @@
-import Head from 'next/head'
-import { Fragment, ReactNode } from 'react'
+import Head from 'next/head';
+import { Fragment, ReactNode } from 'react';
 
-import styles from '../../styles/Layout.module.scss'
+import styles from 'styles/Layout.module.scss';
 
 type Props = {
-  children: ReactNode
-  title?: string
-}
+  children: ReactNode;
+  title?: string;
+};
 
 function AdminLayout(props: Props) {
   const getTitle = () => {
     if (props.title) {
-      return <title>{props.title} | Groupa</title>
+      return <title>{props.title} | Groupa</title>;
     } else {
-      return <title>Groupa</title>
+      return <title>Groupa</title>;
     }
-  }
+  };
 
   return (
     <Fragment>
@@ -25,7 +25,7 @@ function AdminLayout(props: Props) {
         <main className={styles.content}>{props.children}</main>
       </section>
     </Fragment>
-  )
+  );
 }
 
-export default AdminLayout
+export default AdminLayout;
