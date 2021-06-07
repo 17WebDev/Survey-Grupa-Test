@@ -22,7 +22,14 @@ function AdminLayout(props: Props) {
       <Head>{getTitle()}</Head>
 
       <section className={styles.container}>
-        <main className={styles.content}>{props.children}</main>
+        <main className={styles.content}>{props.children}
+          <nav className={styles.nav}>
+            <div className={styles.brand}>
+              Survey Group
+            </div>
+            <div>Otro div</div>
+          </nav>
+        </main>
       </section>
     </Fragment>
   )

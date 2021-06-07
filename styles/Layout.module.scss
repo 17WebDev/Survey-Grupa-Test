@@ -4,3 +4,19 @@
   flex-direction: column;
   min-height: 100vh;
 }
+
+.nav {
+  height: 5.625rem;
+  width: 100vw;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.brand{
+  color: #1D4ED8;
+  font-weight: 800;
+  margin: 0 50px;
+}
