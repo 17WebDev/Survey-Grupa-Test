@@ -1,0 +1,60 @@
+.cardsContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 50px;
+  @media (min-width: 700px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+//Card Content
+.surveyCard {
+  width: 320px;
+  height: 160px;
+  border-top: 20px solid #cbd5e1;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.06), 0px 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.cardDEtail {
+  width: 100%;
+  height: 20px;
+  background: #cbd5e1;
+  border-radius: 10px 10px 0 0;
+}
+
+.surveyTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 20px 8px 20px;
+}
+
+.svTitle {
+  font-weight: 600;
+  font-size: 16px;
+  color: #475569;
+  margin: 0;
+}
+.edited {
+  margin: 0 20px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.cardBtWrap {
+  display: flex;
+}
+
+.cardBtn {
+  background: #e5e5e5;
+  border-radius: 20px;
+  width: 58px;
+  height: 28px;
+  display: flex;
+  color: #64748B;
+  justify-content: center;
+  text-decoration: none;
+}
