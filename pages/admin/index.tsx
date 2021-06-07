@@ -9,3 +9,4 @@ export function AdminPage() {
     </AdminLayout>
   )
 }
+export default AdminPage;
