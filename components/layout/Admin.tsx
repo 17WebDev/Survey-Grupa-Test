@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { Fragment, ReactNode } from 'react';
+import Link from 'next/link';
 
 import styles from 'styles/Layout.module.scss';
 
@@ -27,7 +28,15 @@ function AdminLayout(props: Props) {
             <div className={styles.brand}>
               Survey Group
             </div>
-            <div>Otro div</div>
+            <div className={styles.navUser}> <p>
+              Michelle Zhang
+              </p>
+              <img
+                alt="BabaFi"
+                className={styles.navbarBrand}
+                src="images/Avatar.png"
+              />
+            </div>
           </nav>
         </main>
       </section>
