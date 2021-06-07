@@ -33,11 +33,17 @@ function AdminLayout(props: Props) {
               </p>
               <img
                 alt="BabaFi"
-                className={styles.navbarBrand}
+                className={styles.userIcon}
                 src="images/Avatar.png"
               />
             </div>
           </nav>
+          <section className={styles.userMenu}>
+            <p>Dashboard</p>
+            <div className={styles.btnContainer}>
+              <a href="">New Survey</a>
+            </div>
+          </section>
         </main>
       </section>
     </Fragment>

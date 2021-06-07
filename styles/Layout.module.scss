@@ -12,22 +12,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #E5E5E5;
+  border-bottom: 1px solid #e5e5e5;
 }
 
-.brand{
-  color: #1D4ED8;
+.brand {
+  color: #1d4ed8;
   font-weight: 800;
   margin: 0 50px;
+  font-size: 18px;
 }
 
-.navUser{
-  border-left: 1px solid #E5E5E5;
+.navUser {
+  border-left: 1px solid #e5e5e5;
   margin: auto 50px;
   display: flex;
   align-items: center;
-  & p{
-    color: #0F172A;
+  & p {
+    color: #0f172a;
     margin: 0 2rem;
     font-weight: 600;
   }
@@ -39,4 +40,36 @@
   flex-grow: 1;
 }
 
+.userIcon {
+  max-height: 48px;
+}
 
+.userMenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e5e5;
+  p {
+    color: #0f172a;
+    font-weight: 700;
+    font-size: 34px;
+    margin-left: 50px;
+  }
+
+  .btnContainer{
+    margin-right: 50px;
+  }
+
+  a {
+    width: 130px;
+    height: 48px;
+    background: #1d4ed8;
+    display: flex;
+    border-radius: 5px;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    justify-content: center;
+  }
+}
