@@ -1,11 +1,10 @@
-import React from 'react';
-
 import AdminLayout from 'components/layout/Admin';
+import DashboardNav from 'components/nav/Dashboard';
 
 export function AdminPage() {
   return (
     <AdminLayout title="Admin">
-      <React.Fragment />
+      <DashboardNav />
     </AdminLayout>
   );
 }

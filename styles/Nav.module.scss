@@ -1,0 +1,32 @@
+.userMenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 10px 20px;
+
+  p {
+    color: #0f172a;
+    font-weight: 700;
+    font-size: 34px;
+    margin-left: 50px;
+    margin-bottom: 0px;
+  }
+
+  .btnContainer {
+    margin-right: 50px;
+  }
+
+  a {
+    width: 130px;
+    height: 48px;
+    background: #1d4ed8;
+    display: flex;
+    border-radius: 5px;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    justify-content: center;
+  }
+}

@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { Fragment, ReactNode } from 'react';
-import Link from 'next/link';
 
+import AdminHeader from 'components/header/Admin';
 import styles from 'styles/Layout.module.scss';
 
 type Props = {
@@ -23,27 +23,10 @@ function AdminLayout(props: Props) {
       <Head>{getTitle()}</Head>
 
       <section className={styles.container}>
-        <main className={styles.content}>{props.children}
-          <nav className={styles.nav}>
-            <div className={styles.brand}>
-              Survey Group
-            </div>
-            <div className={styles.navUser}> <p>
-              Michelle Zhang
-              </p>
-              <img
-                alt="BabaFi"
-                className={styles.userIcon}
-                src="images/Avatar.png"
-              />
-            </div>
-          </nav>
-          <section className={styles.userMenu}>
-            <p>Dashboard</p>
-            <div className={styles.btnContainer}>
-              <a href="">New Survey</a>
-            </div>
-          </section>
+        <main className={styles.content}>
+          <AdminHeader />
+
+          {props.children}
         </main>
       </section>
     </Fragment>

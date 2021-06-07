@@ -1,26 +1,31 @@
 import Link from 'next/link';
-import React, { ChangeEvent, FormEvent, useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
+import { ChangeEvent, FormEvent, useState } from 'react';
+import { Button, Card, Container, Form } from 'react-bootstrap';
 
 import HomeLayout from 'components/layout/Home';
 
-function LoginPage() {
+function SignUpPage() {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [verify, setVerify] = useState('');
 
-  const onChange = ({
-    target: { name, value },
-  }: ChangeEvent<HTMLInputElement>) => {
-    switch (name) {
+  const onChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
+    switch (target.name) {
+      case 'name':
+        setName(target.value);
+        break;
+
       case 'email':
-        setEmail(value);
+        setEmail(target.value);
         break;
 
       case 'password':
-        setPassword(value);
+        setPassword(target.value);
+        break;
+
+      case 'verify':
+        setVerify(target.value);
         break;
     }
   };
@@ -30,14 +35,27 @@ function LoginPage() {
   };
 
   return (
-    <HomeLayout title="Login">
+    <HomeLayout title="Sign up">
       <div className="d-flex flex-grow-1 bg-dark">
         <Container className="d-flex justify-content-center align-items-center">
           <Card body className="w-50 px-4 py-4">
-            <h3 className="mb-3">Login</h3>
+            <h3 className="mb-3">Create your account</h3>
 
             <Form onSubmit={onSubmit}>
-              {/* E-mail input */}
+              <Form.Group className="mb-3" controlId="name">
+                <Form.Label>Name</Form.Label>
+
+                <Form.Control
+                  autoComplete="name"
+                  name="name"
+                  onChange={onChange}
+                  placeholder="Enter your name"
+                  required
+                  type="name"
+                  value={name}
+                />
+              </Form.Group>
+
               <Form.Group className="mb-3" controlId="email">
                 <Form.Label>E-mail address</Form.Label>
 
@@ -52,7 +70,6 @@ function LoginPage() {
                 />
               </Form.Group>
 
-              {/* Password input */}
               <Form.Group className="mb-3" controlId="password">
                 <Form.Label>Password</Form.Label>
 
@@ -66,25 +83,29 @@ function LoginPage() {
                 />
               </Form.Group>
 
-              {/* Forgot password link */}
-              <p className="text-end mb-3">
-                <Link href="/forgot-password">
-                  <a className="text-decoration-none">Forgot your password?</a>
-                </Link>
-              </p>
+              <Form.Group className="mb-3" controlId="verify">
+                <Form.Label>Confirm your password</Form.Label>
 
-              {/* Submit button */}
+                <Form.Control
+                  name="verify"
+                  onChange={onChange}
+                  placeholder="Confirm your password"
+                  required
+                  type="password"
+                  value={verify}
+                />
+              </Form.Group>
+
               <p className="mb-3 text-center">
                 <Button type="submit" variant="primary">
-                  Log in
+                  Submit
                 </Button>
               </p>
 
-              {/* Sign up link */}
               <p className="text-center">
-                {"Don't have an account? "}
-                <Link href="/signup">
-                  <a className="text-decoration-none">Sign up</a>
+                {'Already have an account? '}
+                <Link href="/login">
+                  <a className="text-decoration-none">Log in</a>
                 </Link>
               </p>
             </Form>
@@ -95,4 +116,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default SignUpPage;
