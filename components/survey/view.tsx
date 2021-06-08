@@ -8,7 +8,7 @@ function View() {
       {
         type: "checkbox",
         name: "car",
-        title: "What car are you driving?",
+        title: "Where do you find resources when searching through the internet? ",
         isRequired: true,
         hasSelectAll: true,
         hasNone: true,
@@ -16,17 +16,11 @@ function View() {
         colCount: 4,
         choicesOrder: "asc",
         choices: [
-          "Ford",
-          "Tesla",
-          "Vauxhall",
-          "Volkswagen",
-          "Nissan",
-          "Audi",
-          "Mercedes-Benz",
-          "BMW",
-          "Peugeot",
-          "Toyota",
-          "Citroen"
+          "Reddit",
+          "Stackoverflow",
+          "Github",
+          "Medium",
+          "Other",
         ]
       }
     ]
@@ -34,7 +28,7 @@ function View() {
   var surveyRender = <Survey.Survey json={json} />;
   return (
     <div>
-      <h1>SurveyJS react example</h1>
+      <h1>Survey Example</h1>
       <h2>Checkbox - none of the above and select all</h2>
       {surveyRender}
     </div>

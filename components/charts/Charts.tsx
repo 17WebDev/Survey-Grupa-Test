@@ -22,9 +22,9 @@ function Charts() {
                             calc: 'stringify',
                         },
                     ],
-                    ['Question 1', 8.94, '#F8B970', null],
-                    ['Question 2', 10.49, '#A3D3FF', null],
-                    ['Question 3', 19.3, '#9896F6', null],
+                    ['Github', 8.94, '#F8B970', null],
+                    ['Reddit', 10.49, '#A3D3FF', null],
+                    ['Medium', 19.3, '#9896F6', null],
                 ]}
                 options={{
                     title: 'Survey Responses',

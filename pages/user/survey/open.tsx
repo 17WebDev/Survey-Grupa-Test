@@ -24,10 +24,10 @@ function open() {
           </div>
         </div>
       </section>
+      <View/>
       <section className={styles.chartSection}>
       <Charts/>
       </section>
-      <View/>
     </Fragment>
 
   );
