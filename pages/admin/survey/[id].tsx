@@ -22,7 +22,7 @@ const initialQuestionData: Question = {
   type: QuestionType.CHECKBOX,
 };
 
-function CreateSurveyPage() {
+function AdminSurveyInfoPage() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -151,15 +151,20 @@ function CreateSurveyPage() {
     <AdminLayout title="Create survey">
       <Form onSubmit={onSubmit}>
         <section className={styles.userMenu}>
-          <Container>
+          <Container className="d-flex align-items-center">
             <Breadcrumb className={styles.userNav}>
               <Link href="/admin" passHref>
                 <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
               </Link>
 
-              <Breadcrumb.Item active>Create survey</Breadcrumb.Item>
+              <Breadcrumb.Item active>Survey</Breadcrumb.Item>
             </Breadcrumb>
           </Container>
+
+          <div className={styles.linksWrap}>
+            <a href="">Questions</a>
+            <a href="">Results</a>
+          </div>
 
           <div className={styles.btnContainer}>
             <Button className={styles.surveyBtn}>Publish</Button>
@@ -169,7 +174,7 @@ function CreateSurveyPage() {
         <Container className="my-4">
           <Card className="mb-4 mx-auto">
             <Card.Header className="bg-white-50 fw-medium">
-              New survey
+              Survey title
             </Card.Header>
 
             <Card.Body>
@@ -313,4 +318,4 @@ function CreateSurveyPage() {
   );
 }
 
-export default CreateSurveyPage;
+export default AdminSurveyInfoPage;

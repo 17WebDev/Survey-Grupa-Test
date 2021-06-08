@@ -8,9 +8,14 @@ import styles from 'styles/Card.module.scss';
 type Props = {
   survey: Survey;
   filter?: SurveyFilter;
+  onClick: () => void;
 };
 
-function UserCard({ survey, filter = SurveyFilter.DRAFT }: Props) {
+function UserCard({
+  filter = SurveyFilter.DRAFT,
+  onClick = () => {},
+  survey,
+}: Props) {
   const getHeaderTheme = (): CSSProperties => {
     switch (filter) {
       case SurveyFilter.ACTIVE:
@@ -38,7 +43,7 @@ function UserCard({ survey, filter = SurveyFilter.DRAFT }: Props) {
   };
 
   return (
-    <Card className="mb-3">
+    <Card className="mb-3 cursor-pointer" onClick={onClick}>
       <Card.Header style={getHeaderTheme()} />
 
       <Card.Body>

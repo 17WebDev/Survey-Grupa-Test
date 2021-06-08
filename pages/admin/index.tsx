@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { Col, Container, Row } from 'react-bootstrap';
 
 import SurveyCard from 'components/cards/SurveyCard';
@@ -12,6 +13,8 @@ export function AdminPage() {
     updated_at: new Date(),
   };
 
+  const router = useRouter();
+
   return (
     <AdminLayout title="Dashboard">
       <DashboardNav />
@@ -19,7 +22,10 @@ export function AdminPage() {
       <Container>
         <Row>
           <Col xs="12" md="4" lg="3">
-            <SurveyCard survey={mock} />
+            <SurveyCard
+              onClick={() => router.push('/admin/survey/1')}
+              survey={mock}
+            />
           </Col>
         </Row>
       </Container>
