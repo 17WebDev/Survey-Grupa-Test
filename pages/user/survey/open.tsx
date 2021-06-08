@@ -23,7 +23,9 @@ function open() {
           </div>
         </div>
       </section>
+      <section className={styles.chartSection}>
       <Charts/>
+      </section>
     </Fragment>
 
   );
