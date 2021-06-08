@@ -1,0 +1,28 @@
+.userMenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e5e5;
+
+  .btnContainer {
+    margin: 16px 50px;
+  }
+
+  .surveyBtn {
+    width: 130px;
+    height: 48px;
+    background: #1d4ed8;
+    display: flex;
+    border-radius: 5px;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    justify-content: center;
+  }
+}
+
+.userNav {
+  margin-left: 10px;
+  margin-top: 15px;
+}

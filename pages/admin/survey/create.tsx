@@ -1,6 +1,8 @@
+import Link from 'next/link';
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import {
   Accordion,
+  Breadcrumb,
   Button,
   Card,
   Col,
@@ -8,14 +10,15 @@ import {
   Form,
   Row,
 } from 'react-bootstrap';
-import { PlusCircle } from 'react-bootstrap-icons';
+import { PlusCircle, Trash } from 'react-bootstrap-icons';
 
 import AdminLayout from 'components/layout/Admin';
 import { Question, QuestionType } from 'lib/types/Question';
+import styles from 'styles/CreateSurvey.module.scss';
 
 const initialQuestionData: Question = {
   title: '',
-  choices: [],
+  choices: [''],
   type: QuestionType.CHECKBOX,
 };
 
@@ -49,12 +52,10 @@ function CreateSurveyPage() {
     }: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const items = questions.map((question, i) => {
         if (index === i) {
-          const item = {
+          return {
             ...question,
             title: value,
           };
-
-          return item;
         }
 
         return question;
@@ -70,12 +71,12 @@ function CreateSurveyPage() {
   ) => {
     const items = [...questions];
 
-    items[index].type = value as QuestionType;
+    items[index].type = value;
 
     setQuestions(items);
   };
 
-  const onClickAdd = () => {
+  const addQuestion = () => {
     if (questions.length < 15) {
       const items = [...questions];
 
@@ -85,10 +86,87 @@ function CreateSurveyPage() {
     }
   };
 
+  const addChoice = (index: number) => {
+    const items = questions.map((question, i) => {
+      if (index === i) {
+        return {
+          ...question,
+          choices: [...question.choices, ''],
+        };
+      }
+
+      return question;
+    });
+
+    setQuestions(items);
+  };
+
+  const onChangeChoice =
+    (questionIndex: number, choiceIndex: number) =>
+    ({ target: { value } }: ChangeEvent<HTMLInputElement>) => {
+      const items = questions.map((question, i) => {
+        if (questionIndex === i) {
+          return {
+            ...question,
+            choices: question.choices.map((choice, j) =>
+              choiceIndex === j ? value : choice
+            ),
+          };
+        }
+
+        return question;
+      });
+
+      setQuestions(items);
+    };
+
+  /**
+   * Delete choice.
+   *
+   * @param questionIndex - Question index.
+   * @param choiceIndex - Choice index.
+   */
+  const deleteChoice = (questionIndex: number, choiceIndex: number) => {
+    if (questions[questionIndex].choices.length > 1) {
+      const items = questions.map((question, i) => {
+        if (questionIndex === i) {
+          return {
+            ...question,
+            choices: question.choices.filter((_, j) => choiceIndex !== j),
+          };
+        }
+
+        return question;
+      });
+
+      setQuestions(items);
+    }
+  };
+
+  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  };
+
   return (
     <AdminLayout title="New survey">
-      <Container className="my-4">
-        <Form>
+      <Form onSubmit={onSubmit}>
+        <section className={styles.userMenu}>
+          <Container>
+            <Breadcrumb className={styles.userNav}>
+              <Link href="/admin" passHref>
+                <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
+              </Link>
+
+              <Breadcrumb.Item active>Create survey</Breadcrumb.Item>
+            </Breadcrumb>
+          </Container>
+
+          <div className={styles.btnContainer}>
+            <Button className={styles.surveyBtn}>Publish</Button>
+          </div>
+        </section>
+
+        <Container className="my-4">
           <Card className="mb-4 mx-auto">
             <Card.Header className="bg-white-50 fw-medium">
               New survey
@@ -128,9 +206,9 @@ function CreateSurveyPage() {
           <Accordion defaultActiveKey="0">
             {questions.map((question, index) => (
               <Accordion.Item
-                key={`question-${index}`}
                 className="mx-auto"
                 eventKey={String(index)}
+                key={`question-${index}`}
               >
                 <Accordion.Header className="fw-medium">
                   Question #{index + 1}
@@ -175,6 +253,47 @@ function CreateSurveyPage() {
                       </Form.Group>
                     </Col>
                   </Row>
+
+                  <hr />
+
+                  <Form.Label>Choices</Form.Label>
+
+                  {question.choices.map((choice, i) => (
+                    <Row key={`question-${index}-choice-${i}`}>
+                      <Col>
+                        <Form.Group
+                          className="mb-3"
+                          controlId={`choice-${index}-${i}`}
+                        >
+                          <Form.Control
+                            name={`choice-${index}-${i}`}
+                            onChange={onChangeChoice(index, i)}
+                            placeholder="Choice"
+                            required
+                            type="text"
+                            value={choice}
+                          />
+                        </Form.Group>
+                      </Col>
+
+                      <Col>
+                        <Trash
+                          className="cursor-pointer m-0"
+                          onClick={() => deleteChoice(index, i)}
+                          size={24}
+                        />
+                      </Col>
+                    </Row>
+                  ))}
+
+                  <Button
+                    className="mt-3"
+                    disabled={questions.length === 15}
+                    onClick={() => addChoice(index)}
+                    variant="dark"
+                  >
+                    <PlusCircle /> Add choice
+                  </Button>
                 </Accordion.Body>
               </Accordion.Item>
             ))}
@@ -182,14 +301,14 @@ function CreateSurveyPage() {
 
           <Button
             className="mt-3"
-            onClick={onClickAdd}
+            onClick={addQuestion}
             disabled={questions.length === 15}
             variant="primary"
           >
             <PlusCircle /> Add question
           </Button>
-        </Form>
-      </Container>
+        </Container>
+      </Form>
     </AdminLayout>
   );
 }

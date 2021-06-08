@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -8,6 +9,8 @@ import Form from 'react-bootstrap/Form';
 import HomeLayout from 'components/layout/Home';
 
 function LoginPage() {
+  const router = useRouter();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -27,6 +30,8 @@ function LoginPage() {
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    router.push('/admin');
   };
 
   return (
@@ -34,8 +39,10 @@ function LoginPage() {
       <div className="d-flex flex-grow-1 bg-dark">
         <Container className="d-flex justify-content-center align-items-center">
           <Card body className="w-50 px-4 py-4">
+            {/* Card title */}
             <h3 className="mb-3">Login</h3>
 
+            {/* Login form */}
             <Form onSubmit={onSubmit}>
               {/* E-mail input */}
               <Form.Group className="mb-3" controlId="email">
