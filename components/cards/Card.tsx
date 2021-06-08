@@ -13,10 +13,12 @@ function UserCard() {
                         <img alt="BabaFi"  src="images/more-vertical.svg" />
                         </a>
                     </div>
-                    <div className={styles.cardBtWrap}>Edited 2 weeks ago</div>
-                    <section>
+                    <div className={styles.edited}>Edited 2 weeks ago
+                    </div>
+                    <section className={styles.cardBtWrap}>
                         <a className={styles.cardBtn} href="">Draft</a>
                     </section>
+
                 </div>
             </section>
         </Fragment>
