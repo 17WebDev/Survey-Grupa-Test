@@ -7,6 +7,8 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 
 import HomeLayout from 'components/layout/Home';
+import { BASE_URL } from 'lib/utils/constants';
+import { setAuth } from 'lib/hooks/auth';
 
 function LoginPage() {
   const router = useRouter();
@@ -28,10 +30,27 @@ function LoginPage() {
     }
   };
 
-  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    router.push('/admin');
+    try {
+      const body = new FormData();
+      body.append('email', email);
+      body.append('password', password);
+
+      const response = await fetch(`${BASE_URL}/login`, {
+        method: 'POST',
+        body,
+      });
+
+      if (response.ok) {
+        router.push('/admin');
+      } else {
+        console.error(response);
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (

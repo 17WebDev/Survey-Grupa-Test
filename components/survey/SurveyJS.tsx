@@ -24,7 +24,11 @@ widgets.jqueryuidatepicker(Survey, $);
 widgets.nouislider(Survey, $);
 widgets.select2tagbox(Survey, $);
 
-export default function SurveyJS() {
+type Props = {
+  json: any;
+};
+
+export default function SurveyJS({ json }: Props) {
   /**
    * SurveyJS model.
    */
@@ -32,7 +36,7 @@ export default function SurveyJS() {
 
   React.useEffect(() => {
     // Create SurveyJS Model
-    const survey = new Survey.Model();
+    const survey = new Survey.Model(json);
 
     setModel(survey);
   }, []);

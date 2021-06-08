@@ -1,3 +1,14 @@
+## Credentials
+E-mail: admin@grupa.com
+Password: Pass123.
+
+## User roles
+### Survey Coordinators (/admin)
+Define and conduct surveys. This is an administrative function not available to normal users.
+
+### Survey Respondents (/user)
+Complete surveys and view results. They have no administrative privileges within the app. 
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

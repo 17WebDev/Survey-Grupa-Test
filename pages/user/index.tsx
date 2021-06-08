@@ -1,11 +1,14 @@
+import { useRouter } from 'next/router';
 import { Col, Container, Row } from 'react-bootstrap';
 
 import SurveyCard from 'components/cards/SurveyCard';
 import AdminLayout from 'components/layout/Admin';
-import DashboardNav from 'components/nav/Dashboard';
+import UserDashboard from 'components/nav/UserDashboard';
 import { Survey } from 'lib/types/Survey';
 
 export function AdminPage() {
+  const router = useRouter();
+
   const mock: Survey = {
     title: 'Survey Title',
     created_at: new Date('2021-05-07 22:00'),
@@ -14,11 +17,15 @@ export function AdminPage() {
 
   return (
     <AdminLayout title="Dashboard">
-      <DashboardNav />
+      <UserDashboard />
+
       <Container>
         <Row>
           <Col xs="12" md="4" lg="3">
-            <SurveyCard survey={mock} />
+            <SurveyCard
+              onClick={() => router.push('/user/survey/1')}
+              survey={mock}
+            />
           </Col>
         </Row>
       </Container>
