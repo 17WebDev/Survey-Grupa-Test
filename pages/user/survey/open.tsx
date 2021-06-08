@@ -26,8 +26,8 @@ function open() {
       </section>
       <section className={styles.chartSection}>
       <Charts/>
-      <View/>
       </section>
+      <View/>
     </Fragment>
 
   );
