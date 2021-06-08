@@ -76,7 +76,7 @@ function SignUpPage() {
       <div className="d-flex flex-grow-1 bg-dark">
         <Container>
           <Row className="d-flex justify-content-center align-items-center h-100">
-            <Col>
+            <Col xs="12" md="6" lg="5">
               <Card body className="p-2 p-lg-4">
                 <h3 className="mb-3">Create your account</h3>
 
