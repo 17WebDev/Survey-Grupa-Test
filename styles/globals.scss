@@ -1,7 +1,7 @@
 @import 'custom';
 .cardsGrid{
     display: grid;
-    max-width: 80vw;
+    max-width: 95rem;
     margin: 25px auto;
     grid-template-columns: 1fr;
     @media (min-width: 700px){
