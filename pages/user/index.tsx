@@ -2,7 +2,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 
 import SurveyCard from 'components/cards/SurveyCard';
 import AdminLayout from 'components/layout/Admin';
-import UserDashboard from 'components/nav/UserDashboard';
+import DashboardNav from 'components/nav/Dashboard';
 import { Survey } from 'lib/types/Survey';
 
 export function AdminPage() {
@@ -14,8 +14,7 @@ export function AdminPage() {
 
   return (
     <AdminLayout title="Dashboard">
-      <UserDashboard />
-
+      <DashboardNav />
       <Container>
         <Row>
           <Col xs="12" md="4" lg="3">
