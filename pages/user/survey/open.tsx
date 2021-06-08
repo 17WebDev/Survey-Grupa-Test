@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Charts from 'components/charts/Charts'
+import View from 'components/survey/view'
 import { Fragment } from 'react';
 import styles from 'styles/OpenSv.module.scss';
 
@@ -25,6 +26,7 @@ function open() {
       </section>
       <section className={styles.chartSection}>
       <Charts/>
+      <View/>
       </section>
     </Fragment>
 
