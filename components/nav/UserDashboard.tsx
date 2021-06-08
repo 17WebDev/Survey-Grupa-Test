@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import styles from 'styles/Nav.module.scss';
 
-function DashboardNav() {
+function UserDashboard() {
   return (
     <section className={styles.userMenu}>
       <section className={styles.userNav}>
@@ -24,4 +24,4 @@ function DashboardNav() {
   );
 }
 
-export default DashboardNav;
+export default UserDashboard;
