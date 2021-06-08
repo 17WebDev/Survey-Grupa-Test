@@ -6,7 +6,10 @@ export function AdminPage() {
   return (
     <AdminLayout title="Admin">
       <DashboardNav />
+      <section>
+
       <UserCard/>
+      </section>
     </AdminLayout>
   );
 }
