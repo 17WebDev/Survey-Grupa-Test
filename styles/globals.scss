@@ -1,1 +1,9 @@
 @import 'custom';
+.cardsGrid{
+    display: grid;
+    max-width: 80vw;
+    grid-template-columns: 1fr;
+    @media (min-width: 700px){
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
