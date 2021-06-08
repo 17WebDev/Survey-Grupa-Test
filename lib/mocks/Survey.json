@@ -1,0 +1,55 @@
+{
+  "title": "Test",
+  "elements": [
+    {
+      "type": "checkbox",
+      "name": "question1",
+      "title": "Where do you find resources when searching through the internet?",
+      "choices": ["Reddit", "Stackoverflow", "Github", "Medium", "Other"],
+      "isRequired": true
+    },
+    {
+      "type": "radiogroup",
+      "name": "question2",
+      "title": "What kind of Computer Scientist do you consider yourself?",
+      "choices": ["Front End", "Backend", "Fullstack", "DBA", "Other"],
+      "isRequired": true
+    },
+    {
+      "type": "radiogroup",
+      "title": "How many years of experience do you have?",
+      "choices": [
+        "10+ Years",
+        "5-10 Years",
+        "3-5 Years",
+        "1-3 Years",
+        "Less than 1 year"
+      ],
+      "isRequired": true
+    },
+    {
+      "type": "radiogroup",
+      "title": "What is your favorite OS?",
+      "choices": ["Windows", "Linux", "Mac OS X", "Android", "iOS"],
+      "isRequired": true
+    },
+    {
+      "type": "radiogroup",
+      "title": "What is your favorite database?",
+      "choices": [
+        "MySQL",
+        "PostgreSQL",
+        "Microsoft SQL Server",
+        "Mongo",
+        "Other"
+      ],
+      "isRequired": true
+    },
+    {
+      "type": "radiogroup",
+      "title": "What is your favorite programming language?",
+      "choices": ["C#", "JS", "PHP", "Python", "Other"],
+      "isRequired": true
+    }
+  ]
+}

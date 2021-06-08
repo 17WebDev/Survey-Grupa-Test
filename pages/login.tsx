@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 
 import HomeLayout from 'components/layout/Home';
-import { BASE_URL } from 'lib/utils/constants';
+import { API_URL } from 'lib/utils/constants';
 import { setAuth } from 'lib/hooks/auth';
 
 function LoginPage() {
@@ -38,7 +38,7 @@ function LoginPage() {
       body.append('email', email);
       body.append('password', password);
 
-      const response = await fetch(`${BASE_URL}/login`, {
+      const response = await fetch(`${API_URL}/login`, {
         method: 'POST',
         body,
       });

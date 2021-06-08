@@ -15,6 +15,7 @@ import { PlusCircle, Trash } from 'react-bootstrap-icons';
 import AdminLayout from 'components/layout/Admin';
 import { Question, QuestionType } from 'lib/types/Question';
 import styles from 'styles/CreateSurvey.module.scss';
+import { API_URL } from 'lib/utils/constants';
 
 const initialQuestionData: Question = {
   title: '',
@@ -143,8 +144,31 @@ function CreateSurveyPage() {
     }
   };
 
-  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    const json = {
+      title,
+      questions,
+    };
+
+    try {
+      const body = new FormData();
+      body.append('name', title);
+      body.append('survey_json', JSON.stringify(json));
+
+      const response = await fetch(`${API_URL}/surveys`, {
+        method: 'POST',
+        body,
+      });
+
+      if (response.ok) {
+      } else {
+        console.log(response);
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -162,7 +186,9 @@ function CreateSurveyPage() {
           </Container>
 
           <div className={styles.btnContainer}>
-            <Button className={styles.surveyBtn}>Publish</Button>
+            <Button className={styles.surveyBtn} type="submit">
+              Publish
+            </Button>
           </div>
         </section>
 
