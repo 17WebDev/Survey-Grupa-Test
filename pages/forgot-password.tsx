@@ -1,9 +1,20 @@
 import Link from 'next/link';
+import { ChangeEvent, FormEvent, useState } from 'react';
 import { Button, Card, Container, Form } from 'react-bootstrap';
 
 import HomeLayout from 'components/layout/Home';
 
 function ForgotPasswordPage() {
+  const [email, setEmail] = useState('');
+
+  const onChange = ({ target: { value } }: ChangeEvent<HTMLInputElement>) => {
+    setEmail(value);
+  };
+
+  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  };
+
   return (
     <HomeLayout title="Forgot password">
       <div className="d-flex flex-grow-1 bg-dark">
@@ -11,14 +22,18 @@ function ForgotPasswordPage() {
           <Card body className="w-50 px-4 py-4">
             <h3 className="mb-3">Forgot your password?</h3>
 
-            <Form>
+            <Form onSubmit={onSubmit}>
               <Form.Group className="mb-3" controlId="email">
                 <Form.Label>E-mail address</Form.Label>
 
                 <Form.Control
                   autoComplete="email"
+                  name="email"
+                  onChange={onChange}
                   placeholder="Enter your e-mail"
+                  required
                   type="email"
+                  value={email}
                 />
               </Form.Group>
 
