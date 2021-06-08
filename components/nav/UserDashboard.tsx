@@ -9,17 +9,10 @@ function UserDashboard() {
         <p>Dashboard</p>
 
         <div className={styles.linksWrap}>
-          <a href="">Drafts</a>
-          <a href="">Active</a>
-          <a href="">Closed</a>
+          <a href="">Open</a>
+          <a href="">Completed</a>
         </div>
       </section>
-
-      {/* <div className={styles.btnContainer}>
-        <Link href="/admin/survey/create">
-          <a className={styles.surveyBtn}>New Survey</a>
-        </Link>
-      </div> */}
     </section>
   );
 }
