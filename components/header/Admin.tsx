@@ -12,7 +12,7 @@ function AdminHeader() {
       <div className={styles.navUser}>
         <p>John Doe</p>
 
-        <img alt="Image" className={styles.userIcon} src="images/Avatar.png" />
+        <img alt="Image" className={styles.userIcon} src="/images/Avatar.png" />
       </div>
     </nav>
   );

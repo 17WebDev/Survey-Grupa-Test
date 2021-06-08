@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import styles from 'styles/Nav.module.scss';
 
 function DashboardNav() {
@@ -14,9 +16,9 @@ function DashboardNav() {
       </section>
 
       <div className={styles.btnContainer}>
-        <a className={styles.surveyBtn} href="">
-          New Survey
-        </a>
+        <Link href="/admin/survey/create">
+          <a className={styles.surveyBtn}>New Survey</a>
+        </Link>
       </div>
     </section>
   );
