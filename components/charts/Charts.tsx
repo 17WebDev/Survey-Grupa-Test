@@ -36,6 +36,7 @@ function Charts() {
                 // For tests
                 rootProps={{ 'data-testid': '6' }}
             />
+
         </Fragment>
 
     );
