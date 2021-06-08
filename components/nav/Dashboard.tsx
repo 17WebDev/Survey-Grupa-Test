@@ -9,8 +9,14 @@ function DashboardNav() {
         <p>Dashboard</p>
 
         <div className={styles.linksWrap}>
-          <a href="">Drafts</a>
-          <a href="">Active</a>
+          <Link href="/admin">
+            <a href="">Drafts</a>
+          </Link>
+
+          <Link href="/admin/active">
+            <a>Active</a>
+          </Link>
+
           <a href="">Closed</a>
         </div>
       </section>

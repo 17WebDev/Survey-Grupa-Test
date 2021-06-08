@@ -52,7 +52,7 @@ function UserCard({
             <p className="mb-0 fw-medium">Survey title</p>
           </div>
 
-          <img alt="Image" src="images/more-vertical.svg" />
+          <img alt="Image" src="/images/more-vertical.svg" />
         </div>
 
         <p className="text-muted">
