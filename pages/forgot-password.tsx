@@ -42,11 +42,6 @@ function ForgotPasswordPage() {
                   Send e-mail
                 </Button>
               </p>
-
-              <p className="text-center">
-                {"Don't have an account? "}
-                <a className="text-decoration-none">Sign up</a>
-              </p>
             </Form>
           </Card>
         </Container>

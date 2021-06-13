@@ -115,12 +115,6 @@ function LoginPage() {
                       Log in
                     </Button>
                   </p>
-
-                  {/* Sign up link */}
-                  <p className="text-center">
-                    {"Don't have an account? "}
-                    <a className="text-decoration-none">Sign up</a>
-                  </p>
                 </Form>
               </Card>
             </Col>
