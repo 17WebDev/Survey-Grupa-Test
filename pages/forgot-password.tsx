@@ -45,9 +45,7 @@ function ForgotPasswordPage() {
 
               <p className="text-center">
                 {"Don't have an account? "}
-                <Link href="/signup">
-                  <a className="text-decoration-none">Sign up</a>
-                </Link>
+                <a className="text-decoration-none">Sign up</a>
               </p>
             </Form>
           </Card>
